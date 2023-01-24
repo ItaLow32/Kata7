@@ -16,7 +16,7 @@ public class FlightApp {
     }
     
     public String getDay(String day) {
-        String sql = "SELECT * FROM flights WHERE DAY_OF_WEEK=" + this.getNumberOfDay(day);
+        String sql = "SELECT * FROM flights WHERE DAY_OF_WEEK=" + this.getDayNumber(day);
         return this.getDataFromSql(sql);
     }
     public String  getBiggerDistance(String distance) {
@@ -73,7 +73,7 @@ public class FlightApp {
         return flights;
     }
 
-    private String getNumberOfDay(String day) {
+    private String getDayNumber(String day) {
         switch(day) {
             case "monday": return "1";
             case "tuesday": return "2";
